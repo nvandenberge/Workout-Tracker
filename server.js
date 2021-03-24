@@ -8,6 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+// morgan is a middleware log that logs details about requests/responses
 app.use(logger("dev"));
 
 

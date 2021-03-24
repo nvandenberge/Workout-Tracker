@@ -32,6 +32,7 @@ async function initExercise() {
 
 initExercise();
 
+// controls which form is displayed based on Exercise Type selection
 function handleWorkoutTypeChange(event) {
   workoutType = event.target.value;
 
@@ -49,6 +50,8 @@ function handleWorkoutTypeChange(event) {
   validateInputs();
 }
 
+// if input is empty, then the value is not considered valid
+// all input must have a value to be valid and submit
 function validateInputs() {
   let isValid = true;
 
@@ -86,6 +89,7 @@ function validateInputs() {
     }
   }
 
+  // confirms all inputs have a value before allowing user to click add/complete buttons
   if (isValid) {
     completeButton.removeAttribute("disabled");
     addButton.removeAttribute("disabled");
@@ -95,6 +99,7 @@ function validateInputs() {
   }
 }
 
+// adds user input to workoutData object based on type
 async function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -126,6 +131,7 @@ function handleToastAnimationEnd() {
   }
 }
 
+// clears all form inputs
 function clearInputs() {
   cardioNameInput.value = "";
   nameInput.value = "";
