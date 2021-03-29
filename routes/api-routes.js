@@ -37,8 +37,16 @@ module.exports = (app) => {
       });
   });
 
+  // GET all workout data when navigating to stats page
   app.get("/api/workouts/range", (req, res) => {
-    db.Workout.find({})
+    let currentDate = new Date().toISOString();
+    let previousWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    db.Workout.find({
+      day: {
+        $gt: previousWeek,
+        $lte: currentDate,
+      },
+    })
       .then((workouts) => {
         res.json(workouts);
       })
