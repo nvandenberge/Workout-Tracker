@@ -8,7 +8,7 @@ module.exports = (app) => {
         res.json(workouts);
       })
       .catch((err) => {
-        res.json("error == ", err);
+        console.log("error == ", err);
       });
   });
 
@@ -40,7 +40,9 @@ module.exports = (app) => {
   // GET all workout data when navigating to stats page
   app.get("/api/workouts/range", (req, res) => {
     let currentDate = new Date().toISOString();
-    let previousWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    let previousWeek = new Date(
+      Date.now() - 7 * 24 * 60 * 60 * 1000
+    ).toISOString();
     db.Workout.find({
       day: {
         $gt: previousWeek,
