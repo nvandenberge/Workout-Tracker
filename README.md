@@ -22,15 +22,15 @@ Create, track, and complete all your workouts with the Fitness Tracker. Users ma
 3. Open your terminal and navigate to the repo's root folder.
 4. Run the following commands:
 
-- `npm install`
-- `npm run seed` (to add data to MongoDB)
+- `npm install` (to install dependencies)
+- `npm run seed` (to add mock data to MongoDB)
 - `node server.js`
 
 5. Open your browser and visit 'localhost:3000' to view application.
 
 ## Usage
 
-Heroku Deployment:
+Heroku Deployment: https://warm-caverns-64357.herokuapp.com/
 
 ![Fitness Tracker Home Page](/public/images/fitnessTracker-1.png)
 ![Fitness Tracker Add Exercises](/public/images/fitnessTracker-2.png)
