@@ -65,6 +65,7 @@ function populateChart(data) {
       responsive: true,
       title: {
         display: true,
+        text: "Minutes Exercised",
       },
       scales: {
         xAxes: [
